@@ -1,7 +1,7 @@
 const addProducts =()=>{
       const products = inputFieldData("products-name");
       const quantity = inputFieldData("products-Quantity")
-      console.log(products ,quantity);
+      // console.log(products ,quantity);
       addProductsList(products , quantity)
 }
 
@@ -22,7 +22,8 @@ const addProducts =()=>{
       const p = document.createElement ('p');
       
        p.innerText = `${count + 1}.  ${products} : ${quantity}`;
-       productsField.appendChild(p)
+       productsField.appendChild(p);
+      //  setStoredData(products , quantity)
        setDataLocalStorages(products , quantity)
   }
 
@@ -43,7 +44,7 @@ const addProducts =()=>{
 const setDataLocalStorages =(products , quantity) =>{
     const cart = getStoredShoppingCard();
     cart[products] = quantity;
-    console.log(cart);
+   //  console.log(cart);
     const cartStringified = JSON.stringify(cart);
     localStorage.setItem("cart" , cartStringified)
 };
